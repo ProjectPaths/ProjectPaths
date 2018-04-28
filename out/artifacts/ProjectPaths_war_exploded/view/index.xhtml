@@ -5,12 +5,52 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
+<f:view >
 
 </f:view>
-<h:form>
-    <h:commandButton value="next" action="#{test.to_next}">
+<h:form >
+<body>
+<h1 >Sign Up</h1>
+</body>
+    <h:outputText value="Company name: "></h:outputText>
+    <h:inputText id="Labelcomapnyname" value="#{test.obj.comapny_name}" ></h:inputText>
 
-    </h:commandButton>
+    <br></br>
+
+    <h:outputText value="Owner name: "></h:outputText>
+    <h:inputText id="Labelowner" value="#{test.obj.owner_name}"></h:inputText>
+    <br></br>
+    <h:outputText value="Address: "></h:outputText>
+    <h:inputText id="Labeladdress" value="#{test.obj.address}"></h:inputText>
+    <br></br>
+    <h:outputText value="Contact no: "></h:outputText>
+    <h:inputText id="Labelcontactno" value="#{test.obj.contact_no}"></h:inputText>
+    <br></br>
+    <h:outputText value="Email: "></h:outputText>
+    <h:inputText id="Labelemail" value="#{test.obj.email}"></h:inputText>
+    <br></br>
+    <h:outputText value="Representitive name: "></h:outputText>
+    <h:inputText id="Labelrepresentitive" value="#{test.obj.representitive_name}"></h:inputText>
+    <br></br>
+    <h:outputText value="Username: "></h:outputText>
+    <h:inputText id="Labelusername" value="#{test.obj.username}"></h:inputText>
+    <br></br>
+    <h:outputText value="Password: "></h:outputText>
+    <h:inputText id="Labelpassword" value="#{test.obj.password}"></h:inputText>
+    <br></br>
+    Safety Measures:
+    <br></br>
+    Salary assurance:
+    <h:selectBooleanCheckbox value="#{test.obj.salary_assurance}"></h:selectBooleanCheckbox>
+    Insurance:
+    <h:selectBooleanCheckbox value="#{test.obj.insurance}"></h:selectBooleanCheckbox>
+    Fire Safety:
+<h:selectBooleanCheckbox value="#{test.obj.fire_safety}"></h:selectBooleanCheckbox>
+    <br></br>
+    <h:commandButton value="submit" action="#{test.signup}"></h:commandButton>
+
+
+
 </h:form>
+
 </html>
