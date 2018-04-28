@@ -14,7 +14,7 @@ public class company_signup_controller {
     public company_signup_controller() {
     }
 
-   public ArrayList<company_signup_model>check() {
+   public ArrayList<company_signup_model>getCheck() {
         ArrayList<company_signup_model> comm = new ArrayList<company_signup_model>();
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");
