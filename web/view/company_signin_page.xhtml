@@ -14,11 +14,11 @@
     <h:inputText id="LabelUsername" value="#{signin.signinModel.usename}"></h:inputText>
     <br></br>
     <h:outputText value="Password: "></h:outputText>
-    <h:inputText id="LabelPassword" value="#{signin.signinModel.password}"></h:inputText>
+    <h:inputSecret value="#{signin.signinModel.password}"></h:inputSecret>
     <br></br>
     <h:commandButton value="submit" action="#{signin.company_signin}"></h:commandButton>
     <br></br>
-    <h:outputText  value="#{signin.signinModel.status}" ></h:outputText>
+    <h:outputText  value="#{signin.signinModel.status}" style="color: red" ></h:outputText>
 
 
 </h:form>

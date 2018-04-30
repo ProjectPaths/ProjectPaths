@@ -57,6 +57,9 @@ public class company_signin_controller {
 
     public String goback()
     {
+        signinModel.setStatus("");
+        signinModel.setUsename("");
+        signinModel.setPassword("");
         return "company_signin_page";
     }
 }
