@@ -15,6 +15,7 @@ import javax.faces.bean.SessionScoped;
 public class company_signup_controller {
     company_signup_model obj = new company_signup_model();
 
+
     public company_signup_controller() {
     }
 

@@ -12,4 +12,26 @@
             <to-view-id>../view/success.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+
+        <from-view-id>../view/company_signin_page.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{signin.signin}</from-action>
+            <from-outcome>company_login_done</from-outcome>
+            <to-view-id>../view/company_login_done.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{signin.signin}</from-action>
+            <from-outcome>company_login_failed</from-outcome>
+            <to-view-id>../view/company_login_failed.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>../view/company_login_failed.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{signin.goback}</from-action>
+            <from-outcome>back</from-outcome>
+            <to-view-id>../view/company_signin_page.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
