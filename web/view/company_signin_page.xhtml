@@ -9,10 +9,18 @@
 
 </f:view>
 <h:form>
+
     <h:outputText value="Username: "></h:outputText>
-    <h:inputText value="#{signin.signin.usename}"></h:inputText>
+    <h:inputText id="LabelUsername" value="#{signin.signinModel.usename}"></h:inputText>
+    <br></br>
     <h:outputText value="Password: "></h:outputText>
-    <h:inputText value="#{signin.signin.password}"></h:inputText>
+    <h:inputText id="LabelPassword" value="#{signin.signinModel.password}"></h:inputText>
+    <br></br>
     <h:commandButton value="submit" action="#{signin.company_signin}"></h:commandButton>
+    <br></br>
+    <h:outputText  value="#{signin.signinModel.status}" ></h:outputText>
+
+
 </h:form>
+
 </html>

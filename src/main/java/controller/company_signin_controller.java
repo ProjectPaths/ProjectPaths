@@ -7,54 +7,56 @@ import java.sql.*;
 @ManagedBean (name = "signin")
 @SessionScoped
 public class company_signin_controller {
-    company_signin_model signin = new company_signin_model();
+    company_signin_model signinModel = new company_signin_model();
 
     public company_signin_controller() {
     }
 
-    public company_signin_model getSignin() {
-        return signin;
+    public company_signin_model getSigninModel() {
+        return signinModel;
     }
 
-    public void setSignin(company_signin_model signin) {
-        this.signin = signin;
+    public void setSigninModel(company_signin_model signinModel) {
+        this.signinModel = signinModel;
     }
-
-   public void company_signin()
+ int p=0;
+    public String company_signin()
    {
        try{
-           String username=signin.getUsename();
-           String password=signin.getPassword();
+           String username=signinModel.getUsename();
+           String password=signinModel.getPassword();
            Class.forName("oracle.jdbc.driver.OracleDriver");
            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","projectpaths","Oracle_1");
            Statement st=con.createStatement();
-           ResultSet rs=st.executeQuery("select* from company_signup");
+           ResultSet rs=st.executeQuery("select username,password from company_signup");
            while(rs.next())
            {
-              String user=rs.getString("username");
-              String pass=rs.getString("password");
-              if(user.equals(username) && pass.equals(password))
+              String user=rs.getString(1);
+              String pass=rs.getString(2);
+              if(username.equals(user) && password.equals(pass))
               {
-                  login();
+                  p=1;
+                  return "company_login_done";
               }
-              else unsucessful();
+
            }
+           if(p!=1)
+           {
+               signinModel.setStatus("username or password is invalid");
+               return "company_signin_page";
+
+           }
+
 
        }
        catch (Exception e){
            System.out.println(e);
        }
+       return null;
    }
-    public String login()
-    {
-        return "company_login_done";
-    }
-    public String unsucessful()
-    {
-        return "company_login_failed";
-    }
+
     public String goback()
     {
-        return "back";
+        return "company_signin_page";
     }
 }
