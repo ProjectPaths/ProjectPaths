@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:outputLabel value="Client portion"/>
+</f:view>
+
+<br/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+<h:outputLabel value="#{client.client_model.status}"></h:outputLabel>
+<br/>
+<br/>
+<button onclick="document.getElementById('id01').style.display='block'"
+        class="w3-button">Client Sign In </button>
+<button onclick="document.getElementById('id02').style.display='block'"
+        class="w3-button">Client Sign Up</button>
+
+
+<div id="id01" class="w3-modal">
+<div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+        <br/> <br/>
+<h:form>
+        <h:outputText value="Username "></h:outputText>
+        <h:inputText id="u_name" value="#{client.client_model.client_username}"></h:inputText>
+        <br></br>
+
+        <h:outputText value="Password "></h:outputText>
+        <h:inputText id="password" value="#{client.client_model.password}"></h:inputText>
+        <br></br>
+
+        <h:commandButton value="Sign in" action="#{client.signin}"></h:commandButton>
+</h:form>
+        <br/> <br/>
+    </div>
+</div>
+</div>
+
+
+<div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+        <div class="w3-container">
+      <span onclick="document.getElementById('id02').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+
+            <h:form>
+                <br/>
+                <br/>
+                <h:outputText value="Name: "></h:outputText>
+                <h:inputText id="clientname" value="#{client.client_model.client_name}" ></h:inputText>
+
+                <br></br>
+
+                <h:outputText value="Username "></h:outputText>
+                <h:inputText id="username" value="#{client.client_model.client_username}"></h:inputText>
+                <br></br>
+
+                <h:outputText value="Password "></h:outputText>
+                <h:inputText id="pwd" value="#{client.client_model.password}"></h:inputText>
+                <br></br>
+
+                <h:outputText value="Address: "></h:outputText>
+                <h:inputText id="clientaddress" value="#{client.client_model.client_address}"></h:inputText>
+                <br></br>
+
+                <h:outputText value="Country: "></h:outputText>
+                <h:inputText id="client_country" value="#{client.client_model.client_country}"></h:inputText>
+                <br></br>
+
+                <h:outputText value="Contact no: "></h:outputText>
+                <h:inputText id="clientcontactno" value="#{client.client_model.client_contact_no}"></h:inputText>
+                <br></br>
+                <h:outputText value="Email: "></h:outputText>
+                <h:inputText id="Labelemail"  value="#{client.client_model.email}" ></h:inputText>
+                <br></br>
+
+                <h:commandButton value="Submit" action="#{client.Signup}"></h:commandButton>
+            </h:form>
+            <br/>
+            <br/>
+
+        </div>
+    </div>
+</div>
+
+
+</html>

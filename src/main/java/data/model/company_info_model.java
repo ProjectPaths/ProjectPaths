@@ -1,5 +1,7 @@
 package data.model;
 
+import java.security.PrivateKey;
+
 public class company_info_model {
     private String comapny_name;
     private String owner_name;
@@ -13,8 +15,10 @@ public class company_info_model {
     private boolean insurance;
     private boolean fire_safety;
 
+
     public company_info_model() {
     }
+
 
     public String getComapny_name() {
         return comapny_name;

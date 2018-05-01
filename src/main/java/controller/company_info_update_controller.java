@@ -48,7 +48,7 @@ public class company_info_update_controller extends company_signin_model{
             String pass=(String) session.getAttribute("password");
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","projectpaths","Oracle_1");
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcs","projectpaths","Oracle_1");
             Statement st=con.createStatement();
             ResultSet rs=st.executeQuery("select * from company_signup where username='"+user+"' and password='"+pass+"'");
             while (rs.next())
@@ -88,7 +88,7 @@ public class company_info_update_controller extends company_signin_model{
             String pass=(String) session.getAttribute("password");
 
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "projectpaths", "Oracle_1");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcs", "projectpaths", "Oracle_1");
             Statement st = con.createStatement();
             String b = up.getComapny_name();
             String c = up.getOwner_name();
@@ -106,6 +106,7 @@ public class company_info_update_controller extends company_signin_model{
                     "insuarnce='"+ins+"',fire_safety='"+fire+"' where username='"+user+"' and password='"+pass+"'" +
                     "";
             st.executeUpdate(a);
+            System.err.println(b);
         } catch (Exception var15) {
             System.out.println("e");
         }

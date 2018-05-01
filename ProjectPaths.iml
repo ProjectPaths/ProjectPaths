@@ -31,5 +31,6 @@
     <orderEntry type="library" name="ojdbc7-12.1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-api:2.2.16" level="project" />
     <orderEntry type="library" name="Maven: com.sun.faces:jsf-impl:2.2.16" level="project" />
+    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
   </component>
 </module>

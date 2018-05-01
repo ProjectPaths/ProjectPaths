@@ -39,5 +39,33 @@
             <to-view-id>../view/company_info_update.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>../view/client_signin_signup.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{client.Signup}</from-action>
+            <from-outcome>client_signin_signup</from-outcome>
+            <to-view-id>../view/client_signin_signup.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{client.signin}</from-action>
+            <from-outcome>client_signin_signup</from-outcome>
+            <to-view-id>../view/client_signin_signup.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{client.signin}</from-action>
+            <from-outcome>client_login_done</from-outcome>
+            <to-view-id>../view/client_login_done.xhtml</to-view-id>
+        </navigation-case>
+
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>../view/client_login_done.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{client.logout}</from-action>
+            <from-outcome>client_signin_signup</from-outcome>
+            <to-view-id>../view/client_signin_signup.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
 
 </faces-config>

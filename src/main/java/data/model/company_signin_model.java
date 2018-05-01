@@ -19,11 +19,12 @@ public class company_signin_model {
 
 
     public String getUsename() {
-        return usename;
+        System.out.println(usename);return usename;
     }
 
     public void setUsename(String usename) {
         this.usename = usename;
+
     }
 
     public String getPassword() {
