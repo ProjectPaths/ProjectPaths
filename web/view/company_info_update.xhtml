@@ -6,13 +6,43 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="update"/>
+    <h:outputLabel value="Edit information"/>
 </f:view>
 <h:form>
-    <h:outputText value="#{updatebean.up.comapny_name} "></h:outputText>
+    <h:outputText value="Company Name: "></h:outputText>
 
     <h:inputText id="LabelUsername" value="#{updatebean.up.comapny_name}" ></h:inputText>
-
-
+    <h:outputText value="Owner name: "></h:outputText>
+    <h:inputText id="Labelowner" value="#{updatebean.up.owner_name}"></h:inputText>
+    <br></br>
+    <h:outputText value="Address: "></h:outputText>
+    <h:inputText id="Labeladdress" value="#{updatebean.up.address}"></h:inputText>
+    <br></br>
+    <h:outputText value="Contact no: "></h:outputText>
+    <h:inputText id="Labelcontactno" value="#{updatebean.up.contact_no}"></h:inputText>
+    <br></br>
+    <h:outputText value="Email: "></h:outputText>
+    <h:inputText id="Labelemail" value="#{updatebean.up.email}"></h:inputText>
+    <br></br>
+    <h:outputText value="Representitive name: "></h:outputText>
+    <h:inputText id="Labelrepresentitive" value="#{updatebean.up.representitive_name}"></h:inputText>
+    <br></br>
+    <h:outputText value="Username: "></h:outputText>
+    <h:inputText id="Labelusername" value="#{updatebean.up.username}"></h:inputText>
+    <br></br>
+    <h:outputText value="Password: "></h:outputText>
+    <h:inputText id="Labelpassword" value="#{updatebean.up.password}"></h:inputText>
+    <br></br>
+    Safety Measures:
+    <br></br>
+    Salary assurance:
+    <h:selectBooleanCheckbox value="#{updatebean.up.salary_assurance}"></h:selectBooleanCheckbox>
+    Insurance:
+    <h:selectBooleanCheckbox value="#{updatebean.up.insurance}"></h:selectBooleanCheckbox>
+    Fire Safety:
+    <h:selectBooleanCheckbox value="#{updatebean.up.fire_safety}"></h:selectBooleanCheckbox>
+    <br></br>
+<h:commandButton value="submit" action="#{updatebean.update_info}"></h:commandButton>
+    <a href="company_login_done.xhtml">go back</a>
 </h:form>
 </html>

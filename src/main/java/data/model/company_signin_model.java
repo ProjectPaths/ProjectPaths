@@ -5,6 +5,9 @@ public class company_signin_model {
     private String password;
     private String status;
 
+    public company_signin_model() {
+    }
+
     public String getStatus() {
         return status;
     }
@@ -13,8 +16,7 @@ public class company_signin_model {
         this.status = status;
     }
 
-    public company_signin_model() {
-    }
+
 
     public String getUsename() {
         return usename;
