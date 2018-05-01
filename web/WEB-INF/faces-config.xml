@@ -33,6 +33,11 @@
             <from-outcome>company_signin_page</from-outcome>
             <to-view-id>../view/company_signin_page.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-action>#{updatebean.update}</from-action>
+            <from-outcome>company_info_update</from-outcome>
+            <to-view-id>../view/company_info_update.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 
 </faces-config>
