@@ -39,16 +39,20 @@ public class company_signup_controller {
             String email = obj.getEmail();
             String representitive = obj.getRepresentitive_name();
             String username = obj.getUsername();
-            String pass = this.obj.getPassword();
+            String pass = obj.getPassword();
             boolean salary = obj.isSalary_assurance();
             boolean ins = obj.isInsurance();
             boolean fire = obj.isFire_safety();
+            System.out.println(username);
             String a = "insert into company_signup(name,owner_name,address,contact_no,email,representitive_name,username,password,salary_assuarnce,insuarnce,fire_safety) values('" + b + "','" + c + "','" + add + "','" + contact + "','" + email + "','" + representitive + "','" + username + "','" + pass + "','" + salary + "','" + ins + "','" + fire + "')";
             st.executeUpdate(a);
-            return "success";
+
+            to_next();
+
         } catch (Exception var15) {
             return "false";
         }
+        return "success";
     }
 
     public String to_next() {

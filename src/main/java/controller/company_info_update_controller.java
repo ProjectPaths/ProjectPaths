@@ -135,7 +135,7 @@ public class company_info_update_controller extends company_signin_model{
     {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "projectpaths", "Oracle_1");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcs", "projectpaths", "Oracle_1");
             Statement st = con.createStatement();
             FacesContext facesContext = FacesContext.getCurrentInstance();
             HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
@@ -144,24 +144,26 @@ public class company_info_update_controller extends company_signin_model{
             String product =product_model.getProduct_type();
             String gsm=product_model.getGsm();
             String price=product_model.getPrice();
-            String a="insert into job_post(product_type,gsm,price_range,username) " +
-                    "values('"+product+"','"+gsm+"','"+price+"',"+user+"') " ;
+            String a="insert into product(product_type,gsm,price_range,username) " +
+                    "values('"+product+"','"+gsm+"','"+price+"','"+user+"') " ;
+            System.out.println(a);
             st.executeUpdate(a);
-            String status="job is posted";
+            String status="product is added";
 
-
+            up.setStatus(status);
 
         }  catch (Exception e){
             System.out.println(e);
+            up.setStatus("Product is not added! Try again");
         }
-        return null;
+        return "company_login_done";
 
     }
     public String job_post()
     {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "projectpaths", "Oracle_1");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcs", "projectpaths", "Oracle_1");
             Statement st = con.createStatement();
             FacesContext facesContext = FacesContext.getCurrentInstance();
             HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
@@ -176,12 +178,12 @@ public class company_info_update_controller extends company_signin_model{
             st.executeUpdate(a);
             String status="job is posted";
 
-
+        up.setStatus(status);
 
         }  catch (Exception e){
             System.out.println(e);
         }
-        return null;
+        return "company_login_done";
     }
     public String job_next()
     {
