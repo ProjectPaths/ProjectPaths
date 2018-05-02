@@ -1,6 +1,8 @@
 package controller;
 import data.model.company_info_model;
 import data.model.company_signin_model;
+import data.model.job_post_model;
+import data.model.product_model;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -16,6 +18,24 @@ import java.sql.Statement;
 public class company_info_update_controller extends company_signin_model{
     company_info_model up=new company_info_model();
     company_signin_model signin=new company_signin_model();
+    job_post_model job=new job_post_model();
+    data.model.product_model product_model=new product_model();
+
+    public job_post_model getJob() {
+        return job;
+    }
+
+    public void setJob(job_post_model job) {
+        this.job = job;
+    }
+
+    public data.model.product_model getProduct_model() {
+        return product_model;
+    }
+
+    public void setProduct_model(data.model.product_model product_model) {
+        this.product_model = product_model;
+    }
 
     public company_info_update_controller() {
     }
@@ -110,5 +130,61 @@ public class company_info_update_controller extends company_signin_model{
         } catch (Exception var15) {
             System.out.println("e");
         }
+    }
+    public String product()
+    {
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "projectpaths", "Oracle_1");
+            Statement st = con.createStatement();
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+            String user=(String) session.getAttribute("username");
+            String pass=(String) session.getAttribute("password");
+            String product =product_model.getProduct_type();
+            String gsm=product_model.getGsm();
+            String price=product_model.getPrice();
+            String a="insert into job_post(product_type,gsm,price_range,username) " +
+                    "values('"+product+"','"+gsm+"','"+price+"',"+user+"') " ;
+            st.executeUpdate(a);
+            String status="job is posted";
+
+
+
+        }  catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+
+    }
+    public String job_post()
+    {
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "projectpaths", "Oracle_1");
+            Statement st = con.createStatement();
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+            String user=(String) session.getAttribute("username");
+            String pass=(String) session.getAttribute("password");
+            String post=job.getPost();
+            int salary=job.getSalary();
+            int vacancy=job.getVacancy();
+            String qual=job.getQualifications();
+            String a="insert into job_post(post,salary,vacancy,qualifications,username) " +
+                    "values('"+post+"','"+salary+"','"+vacancy+"','"+qual+"','"+user+"') " ;
+            st.executeUpdate(a);
+            String status="job is posted";
+
+
+
+        }  catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
+    public String job_next()
+    {
+        return "job_post";
     }
 }
