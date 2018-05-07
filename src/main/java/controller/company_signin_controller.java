@@ -31,7 +31,7 @@ public class company_signin_controller {
            String password=signinModel.getPassword();
 
            Class.forName("oracle.jdbc.driver.OracleDriver");
-           Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcs","projectpaths","Oracle_1");
+           Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","projectpaths","Oracle_1");
            Statement st=con.createStatement();
            ResultSet rs=st.executeQuery("select username,password from company_signup");
            while(rs.next())

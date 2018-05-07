@@ -144,7 +144,7 @@ public class company_info_update_controller extends company_signin_model{
             String product =product_model.getProduct_type();
             String gsm=product_model.getGsm();
             String price=product_model.getPrice();
-            String a="insert into job_post(product_type,gsm,price_range,username) " +
+            String a="insert into product(product_type,gsm,price_range,username) " +
                     "values('"+product+"','"+gsm+"','"+price+"',"+user+"') " ;
             st.executeUpdate(a);
             String status="job is posted";
@@ -174,7 +174,7 @@ public class company_info_update_controller extends company_signin_model{
             String a="insert into job_post(post,salary,vacancy,qualifications,username) " +
                     "values('"+post+"','"+salary+"','"+vacancy+"','"+qual+"','"+user+"') " ;
             st.executeUpdate(a);
-            String status="job is posted";
+           // String status="job is posted";
 
 
 

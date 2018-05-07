@@ -7,7 +7,7 @@
     <navigation-rule>
         <from-view-id>../view/index.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{test.to_next}</from-action>
+            <from-action>#{test.signup}</from-action>
             <from-outcome>success</from-outcome>
             <to-view-id>../view/success.xhtml</to-view-id>
         </navigation-case>

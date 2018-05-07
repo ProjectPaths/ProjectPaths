@@ -30,7 +30,7 @@ public class company_signup_controller {
     public String signup() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcs", "projectpaths", "Oracle_1");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "projectpaths", "Oracle_1");
             Statement st = con.createStatement();
             String b = obj.getComapny_name();
             String c = obj.getOwner_name();

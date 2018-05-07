@@ -7,7 +7,7 @@
     <navigation-rule>
         <from-view-id>../view/index.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{test.to_next}</from-action>
+            <from-action>#{test.signup}</from-action>
             <from-outcome>success</from-outcome>
             <to-view-id>../view/success.xhtml</to-view-id>
         </navigation-case>
@@ -37,6 +37,11 @@
             <from-action>#{updatebean.update}</from-action>
             <from-outcome>company_info_update</from-outcome>
             <to-view-id>../view/company_info_update.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{updatebean.job_next}</from-action>
+            <from-outcome>job_post</from-outcome>
+            <to-view-id>../view/job_post.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
