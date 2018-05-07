@@ -12,6 +12,7 @@
             <to-view-id>../view/success.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+
     <navigation-rule>
 
         <from-view-id>../view/company_signin_page.xhtml</from-view-id>
@@ -70,7 +71,22 @@
             <from-outcome>client_signin_signup</from-outcome>
             <to-view-id>../view/client_signin_signup.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-action>#{updatebean.product}</from-action>
+            <from-outcome>company_login_done</from-outcome>
+            <to-view-id>../view/company_login_done.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>../view/job_post.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{updatebean.job_post}</from-action>
+            <from-outcome>company_login_done</from-outcome>
+            <to-view-id>../view/company_login_done.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
 
 
 </faces-config>

@@ -14,7 +14,15 @@ public class company_info_model {
     private boolean salary_assurance;
     private boolean insurance;
     private boolean fire_safety;
+    private  String status;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public company_info_model() {
     }
