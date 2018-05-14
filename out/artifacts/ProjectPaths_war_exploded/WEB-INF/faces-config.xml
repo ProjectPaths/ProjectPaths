@@ -3,7 +3,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
     http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-
+    <navigation-rule>
+        <from-view-id>../view/homepage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{bean.Next_job_seeker}</from-action>
+            <from-outcome>job_seeker</from-outcome>
+            <to-view-id>../view/job_seeker.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     <navigation-rule>
         <from-view-id>../view/index.xhtml</from-view-id>
         <navigation-case>

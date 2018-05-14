@@ -5,8 +5,15 @@ public class job_post_model {
     private int salary;
     private String qualifications;
     private int vacancy;
+private String name;
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public job_post_model() {
     }

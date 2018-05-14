@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:outputLabel value="Search" style="text-decoration-color: red;font-size: xx-large; text-align: center "/>
+</f:view>
+<br> </br>
+<h:form>
+    <h:commandButton value="Shirts" action="#{search.search_initialize}" style="height: 150px; width: 200px ; text-align: center; font-family: 'Adobe Caslon Pro Bold'; font-size: xx-large;text-decoration-color: red">
+        <f:param name="action" value="Shirts" />
+    </h:commandButton>
+    <h:commandButton value="PANTS" action="#{search.search_initialize}" style="height: 150px; width: 200px ; text-align: center; font-family: 'Adobe Caslon Pro Bold'; font-size: xx-large;text-decoration-color: red">
+        <f:param name="action" value="Pants" />
+    </h:commandButton>
+    <h:commandButton  value="THREE-PIECE" action="#{search.search_initialize}"  style="height: 150px; width: 250px ; text-align: center; font-family: 'Adobe Caslon Pro Bold'; font-size: xx-large;text-decoration-color: red">
+        <f:param name="action" value="Three_piece" />
+    </h:commandButton>
+
+    <h:commandButton value="JEANS" action="#{search.search_initialize}" style="height: 150px; width: 200px ; text-align: center; font-family: 'Adobe Caslon Pro Bold'; font-size: xx-large;text-decoration-color: red">
+        <f:param name="action" value="Jeans" />
+    </h:commandButton>
+</h:form>
+
+</html>
