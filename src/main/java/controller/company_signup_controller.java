@@ -45,8 +45,9 @@ public class company_signup_controller {
             boolean fire = obj.isFire_safety();
             System.out.println(username);
             String a = "insert into company_signup(name,owner_name,address,contact_no,email,representitive_name,username,password,salary_assuarnce,insuarnce,fire_safety) values('" + b + "','" + c + "','" + add + "','" + contact + "','" + email + "','" + representitive + "','" + username + "','" + pass + "','" + salary + "','" + ins + "','" + fire + "')";
+            System.out.println(a);
             st.executeUpdate(a);
-
+            System.out.println(username);
             to_next();
 
         } catch (Exception var15) {

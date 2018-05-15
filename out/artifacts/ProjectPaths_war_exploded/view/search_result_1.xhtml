@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+<f:view>
+  <h:outputLabel value="Search result"></h:outputLabel>
+</f:view>
+
+
+<h:dataTable value="#{search.searchResult}" var="c">
+
+    <h:column>
+        <h:outputLabel value="Name : "/> #{c.comapny_name} <br/>
+        <h:outputLabel value="Email :"/> #{c.email} <br/>
+        <h:outputLabel value="Address :"/> #{c.address} <br/>
+        <h:outputLabel value="Contact_no :"/>#{c.contact_no}<br/>
+        <h:outputLabel value="Owner_name : "/>#{c.owner_name}<br/>
+        <h:outputLabel value="Product_type : "/>#{c.product_type}<br/>
+        <h:outputLabel value="Gsm : "/>#{c.gsm}<br/>
+        <h:outputLabel value="Price_range : "/>#{c.price_range}<br/>
+        <h:outputLabel value="Fire_safety : "/>#{c.fire_safety}<br/>
+        <h:outputLabel value="Insurance : "/>#{c.insurance}<br/>
+        <h:outputLabel value="Salary_assurance : "/>#{c.salary_assurance}<br/>
+
+
+
+    <h:form>
+        <input type="text" id="company" name="company"   value="#{c.username}" />
+        <input type="text" id="client" name="client"   value="#{c.client_username}" />
+        <input type="text" id="product_type" name="product_type"   value="#{c.product_type}" />
+    <h:commandButton value="proceed to order" action="#{search.order}"></h:commandButton>
+
+    </h:form>
+
+
+
+
+    </h:column>
+
+
+
+
+
+
+
+<br/> <br/>
+
+ </h:dataTable>
+
+
+
+
+<br/> <br/><br/>
+<h:form>
+
+  <h:commandButton value="login"  action="client_signin_signup" rendered="#{search.showlogin}"> </h:commandButton>
+
+</h:form>
+
+
+
+
+</html>

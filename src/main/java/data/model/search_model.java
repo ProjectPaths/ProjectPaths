@@ -15,6 +15,33 @@ public class search_model {
     private String gsm;
     private String price_range;
     private String username;
+    private String client_username;
+    private int number_of_products;
+    private  int price_per_product;
+
+    public int getNumber_of_products() {
+        return number_of_products;
+    }
+
+    public void setNumber_of_products(int number_of_products) {
+        this.number_of_products = number_of_products;
+    }
+
+    public int getPrice_per_product() {
+        return price_per_product;
+    }
+
+    public void setPrice_per_product(int price_per_product) {
+        this.price_per_product = price_per_product;
+    }
+
+    public String getClient_username() {
+        return client_username;
+    }
+
+    public void setClient_username(String client_username) {
+        this.client_username = client_username;
+    }
 
     public search_model() {
     }

@@ -5,7 +5,7 @@ public class job_post_model {
     private int salary;
     private String qualifications;
     private int vacancy;
-private String name;
+    private String name;
 
     public String getName() {
         return name;

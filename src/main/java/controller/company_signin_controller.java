@@ -68,7 +68,9 @@ public class company_signin_controller {
 
     public String goback()
     {
-
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+                .getExternalContext().getSession(false);
+        session.invalidate();
         signinModel.setStatus("");
         signinModel.setUsename("");
         signinModel.setPassword("");

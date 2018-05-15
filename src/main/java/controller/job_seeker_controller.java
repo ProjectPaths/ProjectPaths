@@ -35,12 +35,13 @@ public class job_seeker_controller {
             while(rs.next())
             {
                 job_post_model stud=new job_post_model();
-
+                job_seeker_model seeker =new job_seeker_model();
                 stud.setSalary(rs.getInt("salary"));
                 stud.setPost(rs.getString("post"));
                 stud.setVacancy(rs.getInt("vacancy"));
                 stud.setQualifications(rs.getString("qualifications"));
                 stud.setName(rs.getString("name"));
+
                 records.add(stud);
             }
 

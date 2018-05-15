@@ -5,9 +5,44 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+
+
+<h:outputText value="#{updatebean.up.status}"></h:outputText>
+
+<button onclick="document.getElementById('id01').style.display='block'"
+        class="w3-button">ADD a product </button>
+
+<div id="id01" class="w3-modal">
+<div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+        <br/> <br/>
+
+        <h:form>
+            <h:selectOneMenu value="#{updatebean.product_model.product_type}">
+                <f:selectItem itemValue="Shirts" itemLabel="Shirts" />
+                <f:selectItem itemValue="Pants" itemLabel="Pants" />
+                <f:selectItem itemValue="Three piece" itemLabel="Three Piece" />
+                <f:selectItem itemValue="Jeans" itemLabel="Jeans" />
+            </h:selectOneMenu>
+            <br></br>
+
+            <h:outputText value="GSM: "></h:outputText>
+            <h:inputText id="password" value="#{updatebean.product_model.gsm}"></h:inputText>
+            <br></br>
+            <h:outputText value="Price: "></h:outputText>
+            <h:inputText id="price" value="#{updatebean.product_model.price}"></h:inputText>
+            <br></br>
+            <h:commandButton value="add" action="#{updatebean.product}"></h:commandButton>
+
+        </h:form>
+
+        <br/> <br/>
+    </div>
+</div>
+</div>
 <h:form>
     <h:commandButton value="post a job" action="#{updatebean.job_next}"></h:commandButton>
     <br></br>
@@ -15,5 +50,8 @@
     <br></br>
     <h:commandButton value="logout" action="#{signin.goback}"></h:commandButton>
 </h:form>
+
+<br/> <br/>
+
 
 </html>

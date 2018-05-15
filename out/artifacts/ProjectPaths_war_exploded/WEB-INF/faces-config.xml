@@ -93,7 +93,22 @@
             <to-view-id>../view/company_login_done.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>../view/search_home.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{search.search_initialize}</from-action>
+            <from-outcome>search_result_1</from-outcome>
+            <to-view-id>../view/search_result_1.xhtml</to-view-id>
+        </navigation-case>
 
-
+    </navigation-rule>
+      <navigation-rule>
+          <from-view-id>../view/search_result_1.xhtml</from-view-id>
+          <navigation-case>
+               <from-action>#{search.order}</from-action>
+              <from-outcome>order2ndpage</from-outcome>
+              <to-view-id>../view/order2ndpage.xhtml</to-view-id>
+          </navigation-case>
+      </navigation-rule>
 
 </faces-config>
