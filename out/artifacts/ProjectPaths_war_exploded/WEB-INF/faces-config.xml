@@ -8,7 +8,15 @@
         <navigation-case>
             <from-action>#{bean.Next_job_seeker}</from-action>
             <from-outcome>job_seeker</from-outcome>
-            <to-view-id>../view/job_seeker.xhtml</to-view-id>
+            <to-view-id>../view/job_seeker.xhtml.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>../view/job_seeker.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{bean.job_seeker_to_job_seeker_apply}</from-action>
+            <from-outcome>job_seeker_apply</from-outcome>
+            <to-view-id>../view/job_seeker_apply.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -110,5 +118,12 @@
               <to-view-id>../view/order2ndpage.xhtml</to-view-id>
           </navigation-case>
       </navigation-rule>
-
+    <navigation-rule>
+        <from-view-id>../view/homepage.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{bean.Next_job_seeker}</from-action>
+            <from-outcome>job_seeker</from-outcome>
+            <to-view-id>../view/job_seeker.job_seeker_apply.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

@@ -6,19 +6,25 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
+
 </f:view>
-<h:form>
-    <h:dataTable value="#{bean.student}" var="c">
-        <h:column>
-            Company name: <h:outputLabel value="#{c.name}"></h:outputLabel><br></br>
-            Post : <h:outputLabel value="#{c.post}"></h:outputLabel><br></br>
-            Salary : <h:outputLabel value="#{c.salary}"></h:outputLabel><br></br>
-            vacancy : <h:outputLabel value="#{c.vacancy}"></h:outputLabel><br></br>
-            Qualifications : <h:outputLabel value="#{c.qualifications}"></h:outputLabel><br></br>
 
-        </h:column>
+<h:dataTable value="#{bean.student}" var="c">
+
+    <h:column>
+        <h:form>
+     Job id :  <input type="text" id="id" name="id" value="#{c.job_id}" ></input>
+        Company name: <h:outputLabel value="#{c.name}"></h:outputLabel><br></br>
+        Post : <h:outputLabel value="#{c.post}"></h:outputLabel><br></br>
+        Salary : <h:outputLabel value="#{c.salary}"></h:outputLabel><br></br>
+        vacancy : <h:outputLabel value="#{c.vacancy}"></h:outputLabel><br></br>
+        Qualifications : <h:outputLabel value="#{c.qualifications}"></h:outputLabel><br></br>
+
+        <h:commandButton value="APPLY" action="#{bean.job_seeker_to_job_seeker_apply}"></h:commandButton>
+        </h:form>
+    </h:column>
 
 
-    </h:dataTable>
-</h:form>
+</h:dataTable>
+
 </html>

@@ -6,7 +6,15 @@ public class job_post_model {
     private String qualifications;
     private int vacancy;
     private String name;
+    private int job_id;
 
+    public int getJob_id() {
+        return job_id;
+    }
+
+    public void setJob_id(int job_id) {
+        this.job_id = job_id;
+    }
     public String getName() {
         return name;
     }

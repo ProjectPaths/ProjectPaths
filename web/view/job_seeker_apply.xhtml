@@ -6,66 +6,38 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Client portion"/>
 </f:view>
+<h:form>
+    <br/>
+    <br/>
+    job id: <h:inputText value="#{bean.obj.job_id}" disabled="true"></h:inputText>
+    <h:outputText value="Name: "></h:outputText>
+    <h:inputText id="name" value="#{bean.obj.name}" ></h:inputText>
 
-<br/>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-<h:outputLabel value="#{client.client_model.status}"></h:outputLabel>
-<br/>
-<br/>
-<button onclick="document.getElementById('id01').style.display='block'"
-        class="w3-button">Client Sign In </button>
-<button onclick="document.getElementById('id02').style.display='block'"
-        class="w3-button">Client Sign Up</button>
+    <br></br>
 
+    <h:outputText value="Father's Name "></h:outputText>
+    <h:inputText id="username" value="#{bean.obj.father_name}"></h:inputText>
+    <br></br>
 
+    <h:outputText value="Mother's Name "></h:outputText>
+    <h:inputText id="pwd" value="#{bean.obj.mother_name}"></h:inputText>
+    <br></br>
 
+    <h:outputText value="Age: "></h:outputText>
+    <h:inputText id="clientaddress" value="#{bean.obj.age}"></h:inputText>
+    <br></br>
 
-<div id="id02" class="w3-modal">
-    <div class="w3-modal-content">
-        <div class="w3-container">
-      <span onclick="document.getElementById('id02').style.display='none'"
-            class="w3-button w3-display-topright">&times;</span>
+    <h:outputText value="Previous Experience: "></h:outputText>
+    <h:inputText id="client_country" value="#{bean.obj.previous_experience}"></h:inputText>
 
-            <h:form>
-                <br/>
-                <br/>
-                <h:outputText value="Name: "></h:outputText>
-                <h:inputText id="name" value="#{bean.obj.name}" ></h:inputText>
+    <br></br>
 
-                <br></br>
-
-                <h:outputText value="Father's Name "></h:outputText>
-                <h:inputText id="username" value="#{bean.obj.father_name}"></h:inputText>
-                <br></br>
-
-                <h:outputText value="Mother's Name "></h:outputText>
-                <h:inputText id="pwd" value="#{bean.obj.mother_name}"></h:inputText>
-                <br></br>
-
-                <h:outputText value="Age: "></h:outputText>
-                <h:inputText id="clientaddress" value="#{bean.obj.age}"></h:inputText>
-                <br></br>
-
-                <h:outputText value="Previous Experience: "></h:outputText>
-                <h:inputText id="client_country" value="#{bean.obj.previous_experience}"></h:inputText>
-
-                <br></br>
-
-                <h:outputText value="Qualifications: "></h:outputText>
-                <h:inputTextarea id="clientcontactno" value="#{bean.obj.qualification}"></h:inputTextarea>
-                <br></br>
+    <h:outputText value="Qualifications: "></h:outputText>
+    <h:inputTextarea id="clientcontactno" value="#{bean.obj.qualification}"></h:inputTextarea>
+    <br></br>
 
 
-                <h:commandButton value="Submit" action="#{bean.apply}"></h:commandButton>
-            </h:form>
-            <br/>
-            <br/>
-
-        </div>
-    </div>
-</div>
-
-
+    <h:commandButton value="Submit" action="#{bean.apply}"></h:commandButton>
+</h:form>
 </html>
