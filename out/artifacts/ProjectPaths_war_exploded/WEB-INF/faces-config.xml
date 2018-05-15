@@ -6,9 +6,17 @@
     <navigation-rule>
         <from-view-id>../view/homepage.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{bean.Next_job_seeker}</from-action>
-            <from-outcome>job_seeker</from-outcome>
-            <to-view-id>../view/job_seeker.xhtml.xhtml</to-view-id>
+            <from-action>#{homepage_to_company.homepage_to_company}</from-action>
+            <from-outcome>company_first_page</from-outcome>
+            <to-view-id>../view/company_first_page.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>../view/company_login_done.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{view_candidates.login_view_to_view_candidates_page}</from-action>
+            <from-outcome>view_candidates</from-outcome>
+            <to-view-id>../view/view_candidates.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -20,7 +28,7 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>../view/index.xhtml</from-view-id>
+        <from-view-id>../view/company_signup.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{test.signup}</from-action>
             <from-outcome>success</from-outcome>
@@ -44,11 +52,7 @@
     </navigation-rule>
     <navigation-rule>
         <from-view-id>../view/company_login_done.xhtml</from-view-id>
-        <navigation-case>
-            <from-action>#{signin.goback}</from-action>
-            <from-outcome>company_signin_page</from-outcome>
-            <to-view-id>../view/company_signin_page.xhtml</to-view-id>
-        </navigation-case>
+
         <navigation-case>
             <from-action>#{updatebean.update}</from-action>
             <from-outcome>company_info_update</from-outcome>
@@ -123,7 +127,7 @@
         <navigation-case>
             <from-action>#{bean.Next_job_seeker}</from-action>
             <from-outcome>job_seeker</from-outcome>
-            <to-view-id>../view/job_seeker.job_seeker_apply.xhtml</to-view-id>
+            <to-view-id>../view/job_seeker.xhtml.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

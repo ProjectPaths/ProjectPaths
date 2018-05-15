@@ -22,55 +22,55 @@ public class company_signin_controller {
     public void setSigninModel(company_signin_model signinModel) {
         this.signinModel = signinModel;
     }
- int p=0;
+    int p=0;
 
     public String company_signin()
-   {
-       try{
-           String username=signinModel.getUsename();
-           String password=signinModel.getPassword();
+    {
+        try{
+            String username=signinModel.getUsename();
+            String password=signinModel.getPassword();
 
-           Class.forName("oracle.jdbc.driver.OracleDriver");
-           Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","projectpaths","Oracle_1");
-           Statement st=con.createStatement();
-           ResultSet rs=st.executeQuery("select username,password from company_signup");
-           while(rs.next())
-           {
-              String user=rs.getString(1);
-              String pass=rs.getString(2);
-              if(username.equals(user) && password.equals(pass))
-              {
-                  p=1;
-                  FacesContext facesContext = FacesContext.getCurrentInstance();
-                  HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
-                  session.setAttribute("username", user);
-                  session.setAttribute("password",pass);
-                  return "company_login_done";
-              }
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","projectpaths","Oracle_1");
+            Statement st=con.createStatement();
+            ResultSet rs=st.executeQuery("select username,password from company_signup");
+            while(rs.next())
+            {
+                String user=rs.getString(1);
+                String pass=rs.getString(2);
+                if(username.equals(user) && password.equals(pass))
+                {
+                    p=1;
+                    FacesContext facesContext = FacesContext.getCurrentInstance();
+                    HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+                    session.setAttribute("username", user);
+                    session.setAttribute("password",pass);
+                    System.out.println(user);
+                    System.out.println(pass);
+                    return "company_login_done";
 
-           }
-           if(p!=1)
-           {
-               signinModel.setStatus("username or password is invalid");
-               return "company_signin_page";
+                }
 
-           }
+            }
+            if(p!=1)
+            {
+                signinModel.setStatus("username or password is invalid");
+                return "company_signin_page";
+
+            }
 
 
-       }
-       catch (Exception e){
-           System.out.println(e);
-       }
-       return null;
-   }
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        return null;
+    }
 
 
 
     public String goback()
     {
-        HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
-                .getExternalContext().getSession(false);
-        session.invalidate();
         signinModel.setStatus("");
         signinModel.setUsename("");
         signinModel.setPassword("");

@@ -19,6 +19,9 @@ import data.model.job_seeker_model;
 public class job_seeker_controller {
     job_seeker_model obj=new job_seeker_model();
 
+    public job_seeker_controller() {
+    }
+
     public job_seeker_model getObj() {
         return obj;
     }
@@ -27,7 +30,7 @@ public class job_seeker_controller {
         this.obj = obj;
     }
 
-    public ArrayList<job_post_model> getStudent(){
+    public ArrayList<job_post_model> getCompany_info(){
         ArrayList<job_post_model>records=new ArrayList<>();
         try{
             Class.forName("oracle.jdbc.driver.OracleDriver");

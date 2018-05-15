@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+</f:view>
+<h:dataTable value="#{view_candidates.view_candidates}" var="v">
+
+    <h:column>
+        <h:form>
+            Job id :  <input type="text" id="id" name="id" value="#{v.job_id}" ></input>
+            Name: <h:outputLabel value="#{v.name}"></h:outputLabel><br></br>
+            Father's Name : <h:outputLabel value="#{v.father_name}"></h:outputLabel><br></br>
+            Mother's Name : <h:outputLabel value="#{v.mother_name}"></h:outputLabel><br></br>
+            Age : <h:outputLabel value="#{v.age}"></h:outputLabel><br></br>
+            Previous Experience : <h:outputLabel value="#{v.previous_experience}"></h:outputLabel><br></br>
+            Qualifications : <h:outputLabel value="#{v.qualification}"></h:outputLabel><br></br>
+        </h:form>
+    </h:column>
+
+
+</h:dataTable>
+ <a href="company_login_done.xhtml">Go back</a>
+</html>
